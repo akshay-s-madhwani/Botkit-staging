@@ -72,7 +72,9 @@ controller.ready(() => {
             }
         });
     }
-
+    controller.on('message', async(bot, message) => {
+        await bot.reply(message, 'I heard a message!');
+    });
 });
 
 
