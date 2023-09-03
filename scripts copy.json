@@ -1,0 +1,196 @@
+[
+  {
+    "id": "hello",
+    "command": "hello",
+    "description": "Respond when a human says hello!",
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "Hello Human!",
+              "How do you do?",
+              "Nice to meet you Human.",
+              "Hi!",
+              "How’s it going?",
+              "Hey!",
+              "Hey there!",
+              "Howdy!",
+              "G`day human!",
+              "Salut!",
+              "Ciao!",
+              "Hola!",
+              "Shalom!"
+            ],
+            "meta": [
+              {
+                "key": "welcome_reply",
+                "value": "true"
+              }
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "pattern": "hell.*",
+        "type": "regexp",
+        "id": "495"
+      },
+      {
+        "type": "string",
+        "pattern": "hello"
+      },
+      {
+        "type": "string",
+        "pattern": "hey"
+      },
+      {
+        "type": "string",
+        "pattern": "hi"
+      },
+      {
+        "type": "string",
+        "pattern": "howdy"
+      }
+    ],
+    "variables": [],
+    "modified": "2019-06-15T19:41:13.177Z",
+    "name": "hello"
+  },
+  {
+    "command": "catalogue",
+    "botId": 1,
+    "description": "Voir le catalogue",
+    "triggers": [
+      {
+        "pattern": "P_VLC",
+        "type": "string",
+        "id": 51
+      },
+      {
+        "type": "string",
+        "pattern": "catalogue"
+      }
+    ],
+    "variables": [
+      {
+        "name": "input_var",
+        "type": "string",
+        "id": 439
+      },
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "{{vars.getting_started}}"
+            ]
+          },
+          {
+            "text": [
+              "{{vars.mustache_variable}}"
+            ],
+            "quick_replies": [
+              {
+                "title": "{{vars.combien}}",
+                "payload": "COMBIEN_PAYLOAD",
+                "content_type": "text"
+              },
+              {
+                "title": "{{vars.depuis}}",
+                "payload": "DEPUIS_PAYLOAD",
+                "content_type": "text"
+              }
+            ],
+            "meta": [
+              {
+                "key": "Custom_key",
+                "value": "Custom_value"
+              }
+            ],
+            "collect": {
+              "key": "input_var",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                },
+                {
+                  "pattern": "sample",
+                  "type": "string",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "text": [
+              "numero_de_tel"
+            ],
+            "fb_attachment": {
+              "template_type": "button",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "num_tel1",
+                  "payload": "payload1"
+                },
+                {
+                  "type": "postback",
+                  "title": "num_tel2",
+                  "payload": "payload2"
+                }
+              ]
+            },
+            "meta": [
+              {
+                "key": "image",
+                "value": "https://cdn.pixabay.com/photo/2014/06/03/19/38/road-sign-361513_960_720.jpg"
+              }
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "catalogue",
+    "modified": "2019-07-04T13:56:39.091Z",
+    "name": "catalogue"
+  }
+]

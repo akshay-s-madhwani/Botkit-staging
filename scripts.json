@@ -1,0 +1,1821 @@
+[
+  {
+    "id": "hello",
+    "command": "hello",
+    "description": "Respond when a human says hello!",
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "Hello Human!",
+              "How do you do?",
+              "Nice to meet you Human.",
+              "Hi!",
+              "How’s it going?",
+              "Hey!",
+              "Hey there!",
+              "Howdy!",
+              "G`day human!",
+              "Salut!",
+              "Ciao!",
+              "Hola!",
+              "Shalom!"
+            ],
+            "meta": [
+              {
+                "key": "welcome_reply",
+                "value": "true"
+              }
+            ]
+          },
+          {
+            "text": [
+              ""
+            ],
+            "fb_attachment": {
+              "template_type": "generic",
+              "elements": [
+                {
+                  "title": "Item",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button Title",
+                      "payload": "payload{{vars.str_test1:fr|parle [[lang]]§mg|miteny [[lang]]§en|speak [[lang]]§es|hablar [[lang]]~}}"
+                    },
+                    {
+                      "type": "web_url",
+                      "title": "Open Link",
+                      "url": "http://botkit.ai",
+                      "webview_height_ratio": "full"
+                    },
+                    {
+                      "type": "postback",
+                      "title": "TestWhatsappPayload",
+                      "payload": "PAYLOAD_INTERRUPT_XXX"
+                    }
+                  ],
+                  "subtitle": "{{vars.str_test:fr|parle0 [[lang]]§mg|miteny0 [[lang]]§en|speak0 [[lang]]~}}",
+                  "image_url": "https://www.blueline.mg/wp-content/themes/blueline/images/Logo-Blueline.jpg",
+                  "item_url": "https://www.blueline.mg"
+                },
+                {
+                  "title": "Second Item",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "2nd Button1 Title",
+                      "payload": "Just2ndPayload"
+                    },
+                    {
+                      "type": "postback",
+                      "title": "2nd Button2 Title",
+                      "payload": "2ndPAYLOAD_INTERRUPT_CODE"
+                    }
+                  ],
+                  "image_url": "https://www.blueline.mg/wp-content/uploads/2016/04/cloud-2.png",
+                  "item_url": "https://www.blueline.mg",
+                  "subtitle": "Second Subtitle"
+                }
+              ]
+            },
+            "collect": null
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "1",
+        "script": [
+          {
+            "text": [
+              "This is 1"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "pattern": "hell.*",
+        "type": "regexp",
+        "id": "495"
+      },
+      {
+        "type": "string",
+        "pattern": "hello"
+      },
+      {
+        "type": "string",
+        "pattern": "hey"
+      },
+      {
+        "type": "string",
+        "pattern": "hi"
+      },
+      {
+        "type": "string",
+        "pattern": "howdy"
+      }
+    ],
+    "variables": [
+      {
+        "name": "temporary_value",
+        "type": "string",
+        "id": 332
+      }
+    ],
+    "modified": "2022-04-06T19:25:05.932Z",
+    "name": "hello"
+  },
+  {
+    "command": "catalogue",
+    "botId": 1,
+    "description": "Voir le catalogue",
+    "triggers": [
+      {
+        "pattern": "P_VLC",
+        "type": "string",
+        "id": 51
+      },
+      {
+        "type": "string",
+        "pattern": "catalogue"
+      }
+    ],
+    "variables": [
+      {
+        "name": "qr_input_var",
+        "type": "string",
+        "id": 439
+      },
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "type": "typing"
+          },
+          {
+            "type": "delay",
+            "value": 1000
+          },
+          {
+            "text": [
+              "{{vars.str_getting_started3:fr|commence [[anarana]] [[fanampiny]]§mg|manomboka [[anarana]] [[fanampiny]]§en|get started [[anarana]] [[fanampiny]]~}} test cms live change static variant 3",
+              "{{vars.str_getting_started:fr|commence [[anarana]] [[fanampiny]]§mg|manomboka [[anarana]] [[fanampiny]]§en|get start [[anarana]] [[fanampiny]]~}} test cms live change static variant 0",
+              "{{vars.str_getting_started1:fr|commence1 [[anarana]] [[fanampiny]]§mg|manomboka1 [[anarana]] [[fanampiny]]§en|get start1 [[anarana]] [[fanampiny]]~}} test cms live change dynamic variant 1",
+              "{{vars.str_getting_started2:fr|commence2 [[anarana]] [[fanampiny]]§mg|manomboka2 [[anarana]] [[fanampiny]]§en|get start2 [[anarana]] [[fanampiny]]~}} test cms live change dynamic variant 2"
+            ]
+          },
+          {
+            "text": [
+              ""
+            ],
+            "fb_attachment": {
+              "template_type": "generic",
+              "elements": [
+                {
+                  "title": "Item 1 one",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button",
+                      "payload": "payload{{vars.str_carouselpayloadbutton1:mg|azer§fr|wxcvb§en|qsdffg~}}"
+                    },
+                    {
+                      "type": "web_url",
+                      "title": "Open Link",
+                      "url": "http://botkit.ai",
+                      "webview_height_ratio": "full"
+                    },
+                    {
+                      "type": "phone_number",
+                      "title": "Call Us",
+                      "payload": "+12125555555"
+                    }
+                  ],
+                  "subtitle": "subtitle{{vars.str_carousel1subtitle1sfqsfqddfqsfqsfqsdDFSQFGFDGDFSFGSDGSDF:mg|subtlMG§fr|subtlFR§en|subtlEN~}}",
+                  "item_url": "https://url.com",
+                  "image_url": "https://images.unsplash.com/photo-1579684256060-d5a308109e21"
+                },
+                {
+                  "title": "Item 2 two{{vars.str_carousel2titlesfqsfqddfqsfqsfqsdDFSQFGFDGDFSFGSDGSDF:mg|subtlMG§fr|subtlFR§en|subtlEN~}}",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button",
+                      "payload": "payload"
+                    },
+                    {
+                      "type": "phone_number",
+                      "title": "Call Us",
+                      "payload": "+12125555555"
+                    }
+                  ],
+                  "subtitle": "Subtitle two",
+                  "image_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557",
+                  "item_url": "https://urlbis.com"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "catalogue",
+    "modified": "2023-09-03T10:59:09.284Z",
+    "name": "catalogue"
+  },
+  {
+    "command": "ontimoutest",
+    "botId": 1,
+    "description": "testing on timeout",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "ontimoutest"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the ontimoutest script. Customize {{vars.str_customizeme_text1:mg|initial value of default#é'è.MG§fr|initial value of default#é'è.FR§en|initial value of default#é'è.EN~}}!"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got {{vars.str_distracted:en|en Default str_distracted for i18n§fr|fr Default str_distracted for i18n§mg|mg Default str_distracted for i18n~}}distracted. We can continue later.",
+              "Second line {{vars.str_timeoutsecondline:en|Default test for i18n§fr|Default test for i18n§mg|Default test for i18n~}}"
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "4d4198e5-94f0-42ea-b4df-752aae49fbe0",
+    "modified": "2019-07-18T19:44:43.124Z",
+    "name": "ontimoutest"
+  },
+  {
+    "command": "lngtest",
+    "botId": 1,
+    "description": "test language change feature",
+    "triggers": [],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "{{vars.str_langchangedtxt:mg|niova teny malagasy ianao§fr|vous avez changé la langue en français§en|you changed lang to english~}}"
+            ],
+            "quick_replies": [
+              {
+                "title": "{{vars.str_langchangedqrt:mg|niova teny malagasy ianao§fr|vous avez changé la langue en français§en|you changed lang to english~}}",
+                "payload": "{{vars.str_langchangedqrp:mg|payload niova teny malagasy ianao§fr|payload vous avez changé la langue en français§en|payload you changed lang to english~}}",
+                "content_type": "text"
+              }
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "6ee418b2-1e4b-4bec-b66f-8fb74982523c",
+    "modified": "2019-09-30T11:15:49.819Z",
+    "name": "lngtest"
+  },
+  {
+    "command": "interrupts",
+    "botId": 1,
+    "description": "just to contains texts template for interrupting dialog",
+    "triggers": [],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "{{vars.str_langchanged:mg|Niova teny Malagasy ianao§fr|Vous avez demandé la langue Française§en|You changed lang to English~}}"
+            ]
+          },
+          {
+            "text": [
+              "{{vars.str_langunchanged:mg|Azafady fa tsy mbola miteny io fiteny io aho§fr|Desolé mais je ne parle pas encore cette langue§en|Sorry but I am not yet talking that language~}}"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "3a568b0b-cd0d-4492-a677-86ea79e78918",
+    "modified": "2019-08-15T18:12:52.257Z",
+    "name": "interrupts"
+  },
+  {
+    "command": "langchange",
+    "botId": 1,
+    "description": "dialog for changing language",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "langchange"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the langchange script. Customize me!"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "e8a85911-5228-4bef-848b-db258d3f0bc0",
+    "modified": "2019-08-14T13:12:27.604Z",
+    "name": "langchange"
+  },
+  {
+    "command": "interrupthelpdialog",
+    "botId": 1,
+    "description": "Interrupt help dialog",
+    "triggers": [
+      {
+        "pattern": "^help$",
+        "type": "regexp",
+        "id": 199
+      },
+      {
+        "pattern": "^aide$",
+        "type": "regexp",
+        "id": 275
+      },
+      {
+        "pattern": "^vonjy$",
+        "type": "regexp",
+        "id": 112
+      }
+    ],
+    "variables": [
+      {
+        "name": "subject",
+        "type": "string",
+        "id": 181
+      },
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "type": "typing"
+          },
+          {
+            "type": "delay",
+            "value": 2000
+          },
+          {
+            "text": [
+              "{{vars.str_starthelp:en|I heard you need help more than anything else!§mg|Henoko hoe tena mila vonjy tokoa ianao izany!§fr|J'entends que vous voulez de l'aide plus qu'autre chose~}}"
+            ]
+          },
+          {
+            "text": [
+              "{{vars.str_askhelp:en|What can I help with?§mg|Inona no azo atao?§fr|Que puis-je faire pour vous?~}}"
+            ],
+            "collect": {
+              "key": "subject",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "text": [
+              "{{vars.str_hrrm:en|HRRM! What do I know about§fr|HRRM! Que sais-je de§mg|HRRM! Inona no haiko mikasika~}} {{vars.subject}}?"
+            ]
+          },
+          {
+            "action": "display_results"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      },
+      {
+        "topic": "display_results",
+        "script": [
+          {
+            "text": [
+              "{{vars.str_hrrm:fr|Voici ce que je sais: §mg|Izao no mba fantako: §en|This is what I know: ~}}{{vars.results}}"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      }
+    ],
+    "id": "292ab1ba-c964-4bc6-a859-9004c94cf228",
+    "modified": "2021-04-12T08:25:01.733Z",
+    "name": "interrupthelpdialog"
+  },
+  {
+    "command": "interruptlangdialog",
+    "botId": 1,
+    "description": "Interrupt lang dialog",
+    "triggers": [
+      {
+        "pattern": "^teny$",
+        "type": "regexp",
+        "id": 373
+      },
+      {
+        "pattern": "^lang$",
+        "type": "regexp",
+        "id": 381
+      },
+      {
+        "pattern": "^langue$",
+        "type": "regexp",
+        "id": 325
+      },
+      {
+        "pattern": "(lang|teny|langue)\\s+(?<lang>\\S\\S)",
+        "type": "regexp",
+        "id": 251
+      }
+    ],
+    "variables": [
+      {
+        "name": "newcustomcollect",
+        "type": "string",
+        "id": 112
+      },
+      {
+        "name": "newlang",
+        "type": "string",
+        "id": 271
+      },
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      },
+      {
+        "topic": "lngchfailed",
+        "script": [
+          {
+            "text": [
+              "This is lngchfailed"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "lngchsuccess",
+        "script": [
+          {
+            "text": [
+              "{{vars.str_lngsuccess:fr|Langue française activée§mg|Niova malagasy ny teny§en|English language activated~}}"
+            ]
+          },
+          {
+            "action": "complete",
+            "selected_scripts_threads": [
+              {
+                "topic": "default",
+                "script": [
+                  {
+                    "text": [
+                      "{{vars.str_starthelp:en|I heard you need help more than anything else!§mg|Henoko hoe tena mila vonjy tokoa ianao izany!§fr|J'entends que vous voulez de l'aide plus qu'autre chose~}}"
+                    ]
+                  },
+                  {
+                    "text": [
+                      "{{vars.str_askhelp:en|What can I help with?§mg|Inona no azo atao?§fr|Que puis-je faire pour vous?~}}"
+                    ],
+                    "collect": {
+                      "key": "subject",
+                      "options": [
+                        {
+                          "default": true,
+                          "pattern": "default",
+                          "action": "next"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "text": [
+                      "{{vars.str_hrrm:en|HRRM! What do I know about§fr|HRRM! Que sais-je de§mg|HRRM! Inona no haiko mikasika~}} {{vars.subject}}?"
+                    ]
+                  },
+                  {
+                    "action": "display_results"
+                  }
+                ]
+              },
+              {
+                "topic": "on_timeout",
+                "script": [
+                  {
+                    "text": [
+                      "Looks like you got distracted. We can continue later."
+                    ]
+                  },
+                  {
+                    "action": "timeout"
+                  }
+                ]
+              },
+              {
+                "topic": "display_results",
+                "script": [
+                  {
+                    "text": [
+                      "{{vars.str_hrrm:fr|Voici ce que je sais: §mg|Izao no mba fantako: §en|This is what I know: ~}}{{vars.results}}"
+                    ]
+                  },
+                  {
+                    "action": "complete"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "lngchunknown",
+        "script": [
+          {
+            "text": [
+              "{{vars.str_lngchunknown:fr|Langue inconnue,\\nsvp choisissez une langue que je connais ?§mg|Teny tsy fantatra,\\nazafady misafidiana amin'ireo teny fantatro ?§en|Language unknown,\\nplease choose from language I do know ?~}}"
+            ],
+            "collect": {
+              "key": "newlang",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            },
+            "meta": [
+              {
+                "key": "key1",
+                "value": "{{vars.str_lngchunknownqr1title:fr|qrtitle1_fr§en|qrtitle1_en§mg|qrtitle1_mg~}}"
+              },
+              {
+                "key": "key2",
+                "value": "{{vars.str_payloadvars_lngchunknownqr1title:fr|qrpayload1_fr§en|qrpayload1_en§mg|qrpayload1_mg~}}"
+              },
+              {
+                "key": "key3",
+                "value": "{{vars.str_lngchunknownqr2title:fr|qrtitle2_fr§en|qrtitle2_en§mg|qrtitle2_mg~}}"
+              },
+              {
+                "key": "key4",
+                "value": "{{vars.str_payloadvars_lngchunknownqr2title:fr|qrpayload2_fr§en|qrpayload2_en§mg|qrpayload2_mg~}}"
+              }
+            ]
+          },
+          {
+            "text": [
+              "ask again test collect"
+            ],
+            "collect": {
+              "key": "newcustomcollect",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      }
+    ],
+    "id": "c261caf1-6fea-4031-8975-8e82b9584e93",
+    "modified": "2021-04-12T08:04:25.816Z",
+    "name": "interruptlangdialog"
+  },
+  {
+    "command": "langunknowndialog",
+    "botId": 1,
+    "description": "Unknown lang dialog",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "langunknowndialog"
+      }
+    ],
+    "variables": [
+      {
+        "name": "newcustomcollect",
+        "type": "string",
+        "id": 112
+      },
+      {
+        "name": "newlang",
+        "type": "string",
+        "id": 271
+      },
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "typing_12000"
+            ]
+          },
+          {
+            "text": [
+              "{{vars.str_lngchunknown:fr|Langue inconnue (§mg|Teny tsy fantatra (§en|Language unknown (~}}{{vars.querylang}}{{vars.str_lngchunknown1:fr|),\\nsvp choisissez une langue que je connais ?§mg|),\\nazafady misafidiana amin'ireo teny fantatro ?§en|),\\nplease choose from language I do know ?~}}",
+              "{{vars.str_lngchunknown2:fr|Je ne reconnais pas (§mg|Tsy mbola miteny (§en|I don't know  (~}}{{vars.querylang}}{{vars.str_lngchunknown3:fr|),\\nvous avez plusieurs choix ci-après :§mg|) aho,\\nireto ny teny azonao isafidianana :§en|),\\nyou can choose from below :~}}"
+            ],
+            "collect": {
+              "key": "newlang",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            },
+            "meta": [
+              {
+                "key": "key1",
+                "value": "{{vars.str_lngchunknownqr1title:fr|qrtitle1_fr§en|qrtitle1_en§mg|qrtitle1_mg~}}"
+              },
+              {
+                "key": "key2",
+                "value": "{{vars.str_payloadvars_lngchunknownqr1title:fr|qrpayload1_fr§en|qrpayload1_en§mg|qrpayload1_mg~}}"
+              },
+              {
+                "key": "key3",
+                "value": "{{vars.str_lngchunknownqr2title:fr|qrtitle2_fr§en|qrtitle2_en§mg|qrtitle2_mg~}}"
+              },
+              {
+                "key": "key4",
+                "value": "{{vars.str_payloadvars_lngchunknownqr2title:fr|qrpayload2_fr§en|qrpayload2_en§mg|qrpayload2_mg~}}"
+              }
+            ],
+            "quick_replies": [
+              {
+                "title": "dynfunc_langunknowndialogdefault_qrnewlang",
+                "payload": "hello",
+                "content_type": "text"
+              }
+            ]
+          },
+          {
+            "text": [
+              "ask again test collect"
+            ],
+            "collect": {
+              "key": "newcustomcollect",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "c261caf1-6fea-4031-5975-5e52b9554e93",
+    "modified": "2019-09-16T17:42:44.172Z",
+    "name": "langunknowndialog"
+  },
+  {
+    "command": "dyncar",
+    "botId": 1,
+    "description": "dynamic carousel",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "dyncar"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the dyncar script {{vars.str_dyncarstart:fr|commence [[anarana]] [[fanampiny]]§mg|manomboka [[anarana]] [[fanampiny]]§en|get started [[anarana]] [[fanampiny]]~}} . Customize me!"
+            ]
+          },
+          {
+            "text": [
+              ""
+            ],
+            "fb_attachment": {
+              "template_type": "generic",
+              "elements": [
+                {
+                  "title": "dynfunc_dyncar_testcarousel",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button",
+                      "payload": "payload"
+                    }
+                  ]
+                },
+                {
+                  "title": "second Item",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button",
+                      "payload": "payload"
+                    },
+                    {
+                      "type": "phone_number",
+                      "title": "Call Us",
+                      "payload": "+12125555555"
+                    },
+                    {
+                      "type": "web_url",
+                      "title": "Open Link",
+                      "url": "http://botkit.ai",
+                      "webview_height_ratio": "full"
+                    }
+                  ],
+                  "subtitle": "second subtitel",
+                  "item_url": "url",
+                  "image_url": "image"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "dyncar",
+    "modified": "2021-04-11T06:17:43.874Z",
+    "name": "dyncar"
+  },
+  {
+    "command": "interruptquitdialog",
+    "botId": 1,
+    "description": "to quit and cancel any dialog",
+    "triggers": [
+      {
+        "pattern": "^quit$",
+        "type": "regexp",
+        "id": 445
+      },
+      {
+        "pattern": "^hiala$",
+        "type": "regexp",
+        "id": 255
+      },
+      {
+        "pattern": "^quitter$",
+        "type": "regexp",
+        "id": 351
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the interruptquitdialog script. Customize me!"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "fa48ad80-81c2-4d27-9850-75dd389690c7",
+    "modified": "2021-04-12T08:25:54.336Z",
+    "name": "interruptquitdialog"
+  },
+  {
+    "command": "botgetstarted",
+    "botId": 1,
+    "description": "send welcome messages",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "botgetstarted"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the botgetstarted script. Customize me! reset"
+            ]
+          },
+          {
+            "text": [
+              "Button template sample text",
+              "Hello this is button"
+            ],
+            "fb_attachment": {
+              "template_type": "button",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Trigger",
+                  "payload": "trigger"
+                },
+                {
+                  "type": "postback",
+                  "title": "Buy",
+                  "payload": "payload"
+                },
+                {
+                  "type": "postback",
+                  "title": "Button",
+                  "payload": "payload"
+                }
+              ]
+            },
+            "meta": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      },
+      {
+        "topic": "new",
+        "script": [
+          {
+            "text": [
+              "This is new"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      }
+    ],
+    "id": "botgetstarted",
+    "modified": "2023-08-28T06:39:07.112Z",
+    "name": "botgetstarted"
+  },
+  {
+    "command": "sampleEcho",
+    "botId": 1,
+    "description": "generate texts for features-api_sampleEcho",
+    "triggers": [
+      {
+        "pattern": "nevertrigger00000",
+        "type": "string",
+        "id": 97
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "{{vars.str_sample_message:fr|exemple français~}}"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "f5a8bf0e-5bf3-48e6-8965-af16315d3a73",
+    "modified": "2021-04-11T08:07:09.685Z",
+    "name": "sampleEcho"
+  },
+  {
+    "command": "interrupted_lang_change",
+    "botId": 1,
+    "description": "response after language change",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "interrupted_lang_change"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "{{vars.str_interrupted_lang_change:fr|Langue changée en [[newlang]]§mg|Niova ho [[newlang]] ny teny§en|Lang changed to [[newlang]]~}}",
+              "{{vars.str_interrupted_lang_change1:fr|Nous parlerons en [[newlang]]§mg|Hiresaka aminy teny [[newlang]] isika§en|We shall now talk in [[newlang]]~}}"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "8d3f4f12-6a29-4e4c-9a9b-5799d51ddee9",
+    "modified": "2021-04-11T19:16:15.250Z",
+    "name": "interrupted_lang_change"
+  },
+  {
+    "command": "qrpayload",
+    "botId": 1,
+    "description": "Test Quick Reply Payload Type",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "qrpayload"
+      }
+    ],
+    "variables": [
+      {
+        "name": "qrval",
+        "type": "string",
+        "id": 277
+      },
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the qrpayload script. Customize me from CMS!"
+            ],
+            "quick_replies": [
+              {
+                "title": "Titledynfunc_qrpayloaddefault_testqrpayload",
+                "payload": "TITLEPAYLOADURL_PAYLOAD",
+                "content_type": "text",
+                "image_url": "https://l-sera-webhook-php-helper.herokuapp.com/picture/logo-orange.jpg"
+              },
+              {
+                "title": "TitleUrlRepeat",
+                "payload": "TitleUrlRepeat",
+                "content_type": "text",
+                "image_url": "https://l-sera-webhook-php-helper.herokuapp.com/picture/logo-sortiratana.jpg"
+              },
+              {
+                "content_type": "user_email",
+                "title": "{{vars.str_sample_user_email:fr|Entrer addresse email~}}"
+              },
+              {
+                "title": "HelloTitle",
+                "payload": "hellopayload",
+                "content_type": "text"
+              }
+            ],
+            "collect": {
+              "key": "qrval",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                },
+                {
+                  "pattern": "TitleUrlRepeat",
+                  "type": "string",
+                  "action": "repeat"
+                }
+              ],
+              "multiple": false
+            }
+          },
+          {
+            "text": [
+              "Thank you for {{vars.qrval}} inputs"
+            ],
+            "quick_replies": [
+              {
+                "title": "dynfunc_qrpayloaddefault_2ndqrtest",
+                "payload": "hello",
+                "content_type": "text"
+              }
+            ],
+            "collect": {
+              "key": "question_2",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "text": [
+              "Thank you for your last reply otherwise I would trigger again"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "qrpayload",
+    "modified": "2023-08-28T10:36:38.427Z",
+    "name": "qrpayload"
+  },
+  {
+    "command": "PAYLOAD_INTERRUPT_CODE",
+    "botId": 1,
+    "description": "I handle direct payload regex call",
+    "triggers": [
+      {
+        "pattern": "PAYLOAD_INTERRUPT_XXX",
+        "type": "string",
+        "id": 343
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "I am from cms PAYLOAD_INTERRUPT_CODE triggered by PAYLOAD_INTERRUPT_XXX"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "PAYLOAD_INTERRUPT_CODE",
+    "modified": "2021-06-03T03:22:26.893Z",
+    "name": "PAYLOAD_INTERRUPT_CODE"
+  },
+  {
+    "command": "TestHello",
+    "botId": 1,
+    "description": "Sends Hello Buttons",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "TestHello"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the TestHello script. Customize me!"
+            ]
+          },
+          {
+            "text": [
+              "What can I do for you"
+            ],
+            "quick_replies": [
+              {
+                "title": "Hello",
+                "payload": "hello",
+                "content_type": "text"
+              },
+              {
+                "content_type": "location"
+              }
+            ],
+            "fb_attachment": {
+              "template_type": "button",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "About",
+                  "payload": "Payload"
+                },
+                {
+                  "type": "postback",
+                  "title": "Products",
+                  "payload": "payload"
+                },
+                {
+                  "type": "postback",
+                  "title": "Cart",
+                  "payload": "payload"
+                }
+              ]
+            },
+            "collect": null
+          },
+          {
+            "action": "execute_script",
+            "execute": {
+              "script": "langchange",
+              "thread": "default"
+            }
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "f66aaae4-5411-4251-a86f-9b86e7edcca5",
+    "modified": "2023-08-28T10:38:41.890Z",
+    "name": "TestHello"
+  },
+  {
+    "command": "Facebook_Test",
+    "botId": 1,
+    "description": "Checking how CMS generates",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "Facebook_Test"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the Facebook_Test script. Customize me!"
+            ]
+          },
+          {
+            "text": [
+              "Hello"
+            ]
+          },
+          {
+            "text": [
+              "This is a Button Message"
+            ],
+            "fb_attachment": {
+              "template_type": "button",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Button 1",
+                  "payload": "Payload"
+                },
+                {
+                  "type": "postback",
+                  "title": "Button cool",
+                  "payload": "Cool payload"
+                },
+                {
+                  "type": "postback",
+                  "title": "Button wow",
+                  "payload": "payload"
+                }
+              ]
+            },
+            "meta": [
+              {
+                "key": "keycustom_key",
+                "value": "custom_value"
+              },
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "quick_replies": [
+              {
+                "title": "Hello",
+                "payload": "hello",
+                "content_type": "text",
+                "image_url": "https://scontent.fdel12-1.fna.fbcdn.net/v/t39.2365-6/23208289_889588377870772_7170760265053503488_n.png?_nc_cat=103&ccb=1-7&_nc_sid=ad8a9d&_nc_ohc=RtaHKv2-qZQAX-t9U65&_nc_ht=scontent.fdel12-1.fna&oh=00_AfCswxI7BwZjm4v4DD7C060P3Uv8QeHt1RbEgISvIrf1BA&oe=650D06B4"
+              }
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      }
+    ],
+    "id": "Facebook_Test",
+    "modified": "2023-09-02T08:56:08.006Z",
+    "name": "Facebook_Test"
+  },
+  {
+    "command": "botgetstarted",
+    "botId": 1,
+    "description": "send welcome messages",
+    "triggers": [
+      {
+        "type": "string",
+        "pattern": "botgetstarted"
+      }
+    ],
+    "variables": [
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "This is the botgetstarted script. Customize me! reset"
+            ]
+          },
+          {
+            "text": [
+              "Button template sample text",
+              "Hello this is button"
+            ],
+            "fb_attachment": {
+              "template_type": "button",
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Trigger",
+                  "payload": "trigger"
+                },
+                {
+                  "type": "postback",
+                  "title": "Buy",
+                  "payload": "payload"
+                },
+                {
+                  "type": "postback",
+                  "title": "Button",
+                  "payload": "payload"
+                }
+              ]
+            },
+            "meta": [
+              {
+                "key": "key",
+                "value": "value"
+              }
+            ],
+            "quick_replies": [
+              {
+                "title": "Hello",
+                "payload": "hello",
+                "content_type": "text"
+              }
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      },
+      {
+        "topic": "new",
+        "script": [
+          {
+            "text": [
+              "This is new"
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      }
+    ],
+    "id": "58a59fba-9338-478f-954a-84cfb5dc8495",
+    "modified": "2023-09-03T09:46:21.567Z",
+    "name": "botgetstarted"
+  }
+]

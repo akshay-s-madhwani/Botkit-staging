@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "main": "bot.js",
-    "author":"Akshay",
-    "license":"MIT",
+    "author": "Akshay",
+    "license": "MIT",
     "scripts": {
         "start": "node bot.js",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,11 +13,12 @@
         "botbuilder-adapter-facebook": "^1.0.12",
         "botbuilder-storage-mongodb": "^0.9.5",
         "botkit": "^4.15.0",
+        "botkit-cms": "^0.0.3",
         "botkit-plugin-cms": "^1.0.3",
         "dotenv": "^7.0.0",
         "restify": "^11.1.0"
     },
     "engines": {
-    "node": "18.x"
-  }
+        "node": "18.x"
+    }
 }
