@@ -26,19 +26,19 @@ if (process.env.MONGO_URI) {
     });
 }
 
-const adapter = BotkitBotFrameworkAdapter;
-// const adapter = new FacebookAdapter({
+// const adapter = BotkitBotFrameworkAdapter;
+const adapter = new FacebookAdapter({
 
-//     // REMOVE THIS OPTION AFTER YOU HAVE CONFIGURED YOUR APP!
-//     enable_incomplete: true,
+    // REMOVE THIS OPTION AFTER YOU HAVE CONFIGURED YOUR APP!
+    enable_incomplete: true,
 
-//     verify_token: process.env.FACEBOOK_VERIFY_TOKEN,
-//     access_token: process.env.FACEBOOK_ACCESS_TOKEN,
-//     app_secret: process.env.FACEBOOK_APP_SECRET,
-// })
+    verify_token: process.env.FACEBOOK_VERIFY_TOKEN,
+    access_token: process.env.FACEBOOK_ACCESS_TOKEN,
+    app_secret: process.env.FACEBOOK_APP_SECRET,
+})
 
-// // emit events based on the type of facebook event being received
-// adapter.use(new FacebookEventTypeMiddleware());
+// emit events based on the type of facebook event being received
+adapter.use(new FacebookEventTypeMiddleware());
 
 
 
@@ -64,18 +64,18 @@ controller.usePlugin(new BotkitCmsLocalPlugin({
     path:__dirname + '/scripts.json'
 })) 
 
-if (process.env.CMS_URI) {
-    controller.usePlugin(new FacebookAdapter({
+// if (process.env.CMS_URI) {
+//     controller.usePlugin(new FacebookAdapter({
 
-        //     // REMOVE THIS OPTION AFTER YOU HAVE CONFIGURED YOUR APP!
+//         //     // REMOVE THIS OPTION AFTER YOU HAVE CONFIGURED YOUR APP!
           
         
-            verify_token: process.env.FACEBOOK_VERIFY_TOKEN,
-            access_token: process.env.FACEBOOK_ACCESS_TOKEN,
-            app_secret: process.env.FACEBOOK_APP_SECRET,
-        })
-        )
-}
+//             verify_token: process.env.FACEBOOK_VERIFY_TOKEN,
+//             access_token: process.env.FACEBOOK_ACCESS_TOKEN,
+//             app_secret: process.env.FACEBOOK_APP_SECRET,
+//         })
+//         )
+// }
 
  
 // console.log(controller)
