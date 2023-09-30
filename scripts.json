@@ -1150,8 +1150,6 @@
               "Hello this is button"
             ],
             "fb_attachment": {
-              "type": "template",
-              "payload": {
                 "template_type": "receipt",
                 "recipient_name": "Stephane Crozatier",
                 "order_number": "12345678902",
@@ -1201,7 +1199,6 @@
                     "image_url": "http://originalcoastclothing.com/img/grayshirt.png"
                   }
                 ]
-              }
             }
           }
         ]
