@@ -241,6 +241,122 @@
             }
           },
           {
+            "text": [
+              ""
+            ],
+            "fb_attachment": {
+              "template_type": "generic",
+              "dynamic": "product_list_1",
+              "keys": [
+                "title",
+                "subtitle",
+                "item_url",
+                "image_url",
+                "buttons"
+              ],
+              "selected_keys": {
+                "title": "This is product's name: $title",
+                "subtitle": "$subtitle \\n\\n Price : $price",
+                "text": "",
+                "buttons": [],
+                "item_url": "",
+                "image_url": ""
+              },
+              "elements": [
+                {
+                  "title": "This is product's name: Slides",
+                  "subtitle": "Simple, minimal and comfortable, these slides feature a classic design in the perfect shade of iron. Whether you're just lounging around the house or running errands, these slides will offer all-day comfort. \\n\\n Price : 25.0",
+                  "item_url": "",
+                  "image_url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/slides.jpg?v=1675447358",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button",
+                      "payload": "gid://shopify/Product/7982853619734"
+                    },
+                    {
+                      "type": "postback",
+                      "title": "Add To Cart",
+                      "payload": "$id"
+                    },
+                    {
+                      "type": "web_url",
+                      "title": "Open Link",
+                      "url": "http://botkit.ai",
+                      "webview_height_ratio": "full"
+                    }
+                  ]
+                },
+                {
+                  "title": "This is product's name: Sweatpants",
+                  "subtitle": "Soft and comfortable sweatpants in stylish shades. They are perfect for lounging with their cozy stretch fabric that offers just the right amount of warmth. Enjoy the ultimate relaxation experience! \\n\\n Price : 35.0",
+                  "item_url": "",
+                  "image_url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenSweatpants01.jpg?v=1675455387",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button",
+                      "payload": "gid://shopify/Product/7982853619734"
+                    },
+                    {
+                      "type": "postback",
+                      "title": "Add To Cart",
+                      "payload": "$id"
+                    },
+                    {
+                      "type": "web_url",
+                      "title": "Open Link",
+                      "url": "http://botkit.ai",
+                      "webview_height_ratio": "full"
+                    }
+                  ]
+                },
+                {
+                  "title": "This is product's name: Men's Crewneck",
+                  "subtitle": "This high-quality crewneck is perfect for your everyday look. Made with 100% cotton, it's soft, comfortable, and undeniably stylish. Full sleeved for a classic look and effortlessly versatile, this cotton crewneck is a must-have in any wardrobe. \\n\\n Price : 120.0",
+                  "item_url": "",
+                  "image_url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenMenscrew01.jpg?v=1675454919",
+                  "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Button",
+                      "payload": "gid://shopify/Product/7982853619734"
+                    },
+                    {
+                      "type": "postback",
+                      "title": "Add To Cart",
+                      "payload": "$id"
+                    },
+                    {
+                      "type": "web_url",
+                      "title": "Open Link",
+                      "url": "http://botkit.ai",
+                      "webview_height_ratio": "full"
+                    }
+                  ]
+                }
+              ],
+              "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Button",
+                  "payload": "gid://shopify/Product/7982853619734"
+                },
+                {
+                  "type": "postback",
+                  "title": "Add To Cart",
+                  "payload": "$id"
+                },
+                {
+                  "type": "web_url",
+                  "title": "Open Link",
+                  "url": "http://botkit.ai",
+                  "webview_height_ratio": "full"
+                }
+              ]
+            }
+          },
+          {
             "action": "complete"
           }
         ]
@@ -260,7 +376,7 @@
       }
     ],
     "id": "catalogue",
-    "modified": "2023-09-03T10:59:09.284Z",
+    "modified": "2023-10-04T10:50:14.313Z",
     "name": "catalogue"
   },
   {
@@ -1150,6 +1266,8 @@
               "Hello this is button"
             ],
             "fb_attachment": {
+              "type": "template",
+              "payload": {
                 "template_type": "receipt",
                 "recipient_name": "Stephane Crozatier",
                 "order_number": "12345678902",
@@ -1199,6 +1317,7 @@
                     "image_url": "http://originalcoastclothing.com/img/grayshirt.png"
                   }
                 ]
+              }
             }
           }
         ]
